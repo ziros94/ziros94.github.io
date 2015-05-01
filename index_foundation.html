@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Unisooq</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="foundation-5.5.1.custom/css/normalize.css">
+    <!--<link type="text/css" rel="stylesheet" href="materialize-v0.96.1/materialize/css/materialize.min.css"  media="screen,projection"/>-->
+    <link rel="stylesheet" href="foundation-5.5.1.custom/css/foundation.css">
+    <link rel="stylesheet" href="css/unisooq.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="foundation-5.5.1.custom/js/vendor/modernizr.js"></script>
+</head>
+<body ng-app="app" ng-cloak>
+    <div id="wrapper">
+        <div class="contain-to-grid sticky">
+            <nav class="top-bar" data-topbar role="navigation" style="text-align: center">
+                <ul class="title-area">
+                    <li class="name">
+                        <h1><a href="#">Unisooq</a></h1>
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+                <section class="top-bar-section">
+                    <!-- Right Nav Section -->
+                    <ul class="right">
+                            <li><a href="#" data-reveal-id="myModal">Login</a></li>
+                            <li class=""><a class="signup" href="#" data-reveal-id="myModal">Register</a></li>
+                    </ul>
+
+                    <ul style="display: inline-block;">
+                        <li class="has-dropdown">
+                            <a href="#">Brooklyn</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Brooklyn College</a></li>
+                                <li><a href="#">Kingsborough Community College</a></li>
+                                <li><a href="#">New York City College of Technology</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Bronx</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Lehman College</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Manhattan</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Baruch College</a></li>
+                                <li><a href="#">Borough of Manhattan Community College</a></li>
+                                <li><a href="#">City College of New York</a></li>
+                                <li><a href="#">Hunter College</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Queens</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Queens College</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Staten Island</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Lehman College</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+        <div class="row body">
+            <div class="small-12 columns" style="">
+                <div class="row">
+                    <div class="small-8 columns" ng-controller="MyCtrl">
+                        <ul class="tabs" data-tab role="tablist">
+                            <li class="tab-title" ng-class="{'active':isActive('/textbooks')}"><a href="#/textbooks">Textbooks</a></li>
+                            <li class="tab-title" ng-class="{'active':isActive('/services')}"><a href="#/services">Services</a></li>
+                            <li class="tab-title" ng-class="{'active':isActive('/events')}"><a href="#/events">Events</a></li>
+                            <li class="tab-title" ng-class="{'active':isActive('/stuff')}"><a href="#/stuff">Stuff</a></li>
+                        </ul>
+                    </div>
+                    <div class="small-4 columns" style="margin-top: 10px;">
+                        <div class="row collapse">
+                            <div class="small-9 columns">
+                                <form>
+                                    <input type="text" style="vertical-align: baseline;" placeholder="Search Unisooq"/>
+                                </form>
+                            </div>
+                            <div class="small-3 columns">
+                                <span class="postfix"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-content">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- FOOTER -->
+        <footer class="contain-to-grid footer">
+            <div class="row">
+                <div class="small-10 columns">
+                    <p class="slogan">The Student Marketplace</p>
+                    <ul class="links">
+                        <li><a href="#" data-reveal-id="myModal">Register/Sign In</a>
+                        <li><a href="#">About Us</a>
+                        <li><a href="#">F.A.Q.</a>
+                        <li><a href="#">Contact</a>
+                        <li><a href="#/terms">Terms and Conditions</a>
+                    </ul>
+                    <p class="copywrite">Unisooq © 2015</p>
+                </div>
+                <div class="small-2 columns" style="margin-top: 10px;">
+                    <div style="vertical-align: bottom;">
+                        <a href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank"><i class="fa fa-3x fa-twitter-square"></i></a>
+                        <a href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank"><i class="fa fa-3x fa-facebook-square" style="color: #3B5998;"></i></a>
+                        <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><i class="fa fa-3x fa-google-plus-square" style="color: #dd4b39;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODAL content -->
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="login or sign up" aria-hidden="true" role="dialog">
+        <div class="row">
+            <div class="large-6 columns auth-plain">
+                <div class="signup-panel left-solid">
+                    <p class="welcome">Registered Users</p>
+                    <form>
+                        <div class="row collapse">
+                            <div class="small-2  columns">
+                                <span class="prefix"><i class="fi-torso-female"></i></span>
+                            </div>
+                            <div class="small-10  columns">
+                                <input type="text" placeholder="username">
+                            </div>
+                        </div>
+                        <div class="row collapse">
+                            <div class="small-2 columns ">
+                                <span class="prefix"><i class="fi-lock"></i></span>
+                            </div>
+                            <div class="small-10 columns ">
+                                <input type="text" placeholder="password">
+                            </div>
+                        </div>
+                    </form>
+                    <a href="#" class="button ">Log In </a>
+                </div>
+            </div>
+
+            <div class="large-6 columns auth-plain">
+                <div class="signup-panel newusers">
+                    <p class="welcome"> New User?</p>
+                    <p>By creating an account with us, you will be able to move through the checkout process faster, view and track your orders, and more.</p><br>
+                    <a href="#" class="button ">Sign Up</a></br>
+                </div>
+            </div>
+
+        </div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    <script type="text/javascript" src="foundation-5.5.1.custom/js/vendor/jquery.js"></script>
+    <!--<script src="materialize-v0.96.1/materialize/js/materialize.min.js"></script>-->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="foundation-5.5.1.custom/js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+            angular.module("app", ['ngRoute'])
+                    .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
+                        $http.get('textbooks.json').success(function(data) {
+                            $scope.textbooks = data;
+                        });
+                    }])
+                    .controller('ShowTextbookCtrl', ['$scope','$http','$routeParams',function($scope, $http, $routeParams){
+
+                        $scope.textbook_id = $routeParams.id;
+                        console.log("URL ID is:" + $routeParams.id);
+                        $http.get('textbooks.json').success(function(data) {
+                            $scope.textbook = data.filter(function(entry){
+                                return entry.id == $scope.textbook_id;
+                            })[0];
+                        });
+                    }])
+                    .controller('ServiceCtrl',['$scope',function($scope){
+                        $scope.services = [
+                            {id:1,title:'need actor casting for elephant man',description:'Males or females need.',school:'City College of New York',place:'',category:'Baruch college',price:5, date:'2014-12-13'},
+                            {id:2,title:'Private Writing Tutoring!!!',description:'The semester has started which means writing numerous papers. I am a certified writing tutor and have worked as a writing tutor in the writing center. I offer help in editing/revising, making outlines for formal essays, help with lab reports and more. Get private and flexible writing tutoring when you need it on campus and online!! Reply for more details. (Negotiable pricing)',school:'City College of New York',place:'CCNY Campus',category:'',price:15,date:'2014-11-25'},
+                            {id:3,title:'Spanish Tutor',description:'',school:'City College of New York',place:'Corona',category:'Borough of Manhattan Community College',price:10, date:'2014-12-13'},
+                            {id:4,title:'Statistics Tutor',description:'I tutor Statistics in math, economics or psychology. I have an MBA in Finance and Bachelors Degrees in Math and Economics. I passed 3 actuarial exams and the CFA exam. I am a math professor at two CUNY schools and am on campus at Queens College on Mondays and Wednesdays in the afternoons - evenings for the Spring Semester. I have been tutoring Statistics for the past 5 years and am very patient.',school:'Queens College',place:'Queens College',category:'',price:50, date:'2014-12-13'}
+                        ];
+                    }])
+                    .controller('EventCtrl',['$scope',function($scope){
+                        $scope.events = [
+                            {id:1,title:'Hunter Symphony Concert', place:'Hunter College 68th Street and Lexington Avenue North Building, First Floor Assembly Hall', school:'Hunter College', category:'', price:0, date:'2015-03-25'},
+                            {id:2,title:'Stress and Time management for Pre-Health Students', place:'Hunter College 68th Street and Lexington Avenue West Building, 603', school:'Hunter College', category:'', price:0, date:'2015-03-20'},
+                            {id:3, title:"Ice cream party and Give away during free hour! free t shirts, Usb's, bagels and roundtrip metro car",place:"STUDENT UNION 320",description:"Ice cream party and Give away during free hour! free t shirts, Usb's, bagels and roundtrip metro card",club:"QC Appreciates Me Week #QCAMW",school:'Queens College',category:'',price:0,date:'2015-03-16'},
+                            {id:4,title:"Movies",club:"CAB",place:"1C 218", description:'February 23 – March 8 “The Hunger Games Mockingjay Part 1”, “Horrible Bosses 2”, and “Unbroken” March 9 – March 22 “Annabelle”, “Ouija” and “No Good Deed” March 23 – April 2 “ Into the Woods”, “Annie” and “The Hobbit: The Battle of the Five Armies” April 13 – April 26th “The Imitation Game”, “If I Stay” and “Divergent” April 27 – May 10 “Space Jam”, “The Breakfast Club” and “Jurassic Park” May 11 – May 24th “Fifty Shades of Grey”, “The Equalizer” and “The Wedding Ringer” 9am-9PM All week long',school:'College of Staten Island', price:0}
+                        ];
+                    }])
+                    .controller('MyCtrl', function($scope, $location) {
+                        console.log($location.path());
+                        $scope.isActive = function(route) {
+                            return route === $location.path();
+                        }
+                    })
+                    .config(function($routeProvider){
+                        $routeProvider
+                                .when('/',{
+                                    templateUrl: 'views/home.html'
+                                })
+                                .when('/textbooks',{
+                                    templateUrl: 'views/textbooks.html',
+                                    controller: 'TextbookCtrl'
+                                })
+                                .when('/textbook/:id',{
+                                    templateUrl: 'views/textbook.html',
+                                    controller: 'ShowTextbookCtrl'
+                                })
+                                .when('/services',{
+                                    templateUrl: 'views/services.html',
+                                    controller: 'ServiceCtrl'
+                                })
+                                .when('/events',{
+                                    templateUrl: 'views/events.html',
+                                    controller: 'EventCtrl'
+                                })
+                                .when('/stuff',{
+                                    templateUrl: 'views/stuff.html'
+                                })
+                                .when('/terms',{
+                                    templateUrl: 'views/terms.html'
+                                });
+                    });
+        </script>
+</body>
+</html>

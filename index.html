@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Unisooq</title>
+    <link rel="stylesheet" href="materialize-v0.96.1/materialize/css/materialize.css">
+    <link rel="stylesheet" href="css/unisooq.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0; padding: 0;  /* to avoid scrollbars */
+        }
+        .adjusted{
+            width: auto !important;
+            top:auto !important;
+        }
+        .body{
+            display: inline-block;text-align: center;margin-top: 10px;
+            /*height: 80.3%;*/
+            flex:1;
+            /*text-align: center;*/
+        }
+        #wrapper {
+            display: flex;  /* use the flex model */
+            min-height: 100%;
+            flex-direction: column;  /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+        }
+        .slogan{
+            color: black;
+            font-size: 1.8rem;
+            margin: 0 0 1rem;
+        }
+    </style>
+</head>
+<body >
+    <!-- Modal Structure -->
+    <div id="login-modal" class="modal" style="max-height: none;">
+    <div class="modal-content">
+        <h4>Log In</h4>
+        <div class="row">
+            <div class="input-field col offset-s3 s6">
+                <i class="mdi-action-account-box prefix"></i>
+                <input id="username" type="text" class="validate">
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col offset-s3 s6">
+                <i class="mdi-action-account-box prefix"></i>
+                <input id="password" type="text" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close btn-flat" style="float: none !important;">Login</a>
+    </div>
+</div>
+
+    <div id="register-modal" class="modal" style="max-height: none;">
+    <div class="modal-content">
+        <h4>Sign Up</h4>
+        <div class="row">
+            <div class="input-field col offset-s2 s4">
+                <input id="first_name" type="text" class="validate">
+                <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col offset-s4 s4">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col offset-s4 s4">
+                <input id="pw_signup" type="password" class="validate">
+                <label for="pw_signup">Create Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col offset-s4 s4">
+                <input id="pw_confirm" type="password" class="validate">
+                <label for="pw_confirm">Confirm Password</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close btn-flat" style="float: none !important;">Agree</a>
+    </div>
+</div>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content adjusted">
+        <li><a href="#">Brooklyn College</a></li>
+        <li><a href="#">Kingsborough Community College</a></li>
+        <li><a href="#">New York City College of Technology</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content adjusted">
+        <li><a href="#">Lehman College</a></li>
+    </ul>
+    <ul id="dropdown3" class="dropdown-content adjusted">
+        <li><a href="#">Baruch College</a></li>
+        <li><a href="#">Borough of Manhattan Community College</a></li>
+        <li><a href="#">City College of New York</a></li>
+        <li><a href="#">Hunter College</a></li>
+    </ul>
+    <ul id="dropdown4" class="dropdown-content adjusted">
+        <li><a href="#">Queens College</a></li>
+    </ul>
+    <ul id="dropdown5" class="dropdown-content adjusted">
+        <li><a href="#">Lehman College</a></li>
+    </ul>
+
+    <div id="wrapper">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper indigo">
+                    <div class="container">
+                        <a href="#!" class="brand-logo left" style="position: static !important;">Unisooq</a>
+                        <ul class="left hide-on-med-and-down" style="margin-left: 8%">
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Brooklyn</a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Bronx</a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Manhattan</a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown4">Queens</a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown5">Staten Island</a></li>
+
+                        </ul>
+                        <ul class="right">
+                            <li><a class="modal-trigger" href="#login-modal">Login</a></li>
+                            <li><a class="modal-trigger" href="#register-modal">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- BODY -->
+        <div class="body">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs" tabs>
+                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}" ><a href="#/textbooks">Textbooks</a></li>
+                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/services">Services</a></li>
+                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/events">Events</a></li>
+                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/stuff">Stuff</a></li>
+                    </ul>
+                </div>
+                <div id="view" class="col s12">
+                    <div class="container">
+                        <div ng-view></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer indigo">
+            <div class="container">
+                <div class="row" style="text-align: center">
+                    <div class="col s10">
+                        <p class="slogan">The Student Marketplace</p>
+                        <ul class="links">
+                            <li><a class="white-text" href="#" data-reveal-id="myModal">Register/Sign In</a>
+                            <li><a class="white-text" href="#">About Us</a>
+                            <li><a class="white-text" href="#">F.A.Q.</a>
+                            <li><a class="white-text" href="#">Contact</a>
+                            <li><a class="white-text" href="#/terms">Terms and Conditions</a>
+                        </ul>
+                    </div>
+                    <div class="col s2 valign-wrapper">
+                        <a class="valign" href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-twitter-square"></i></a>
+                        <a class="valign" href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-facebook-square"></i></a>
+                        <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><i class="fa fa-3x fa-google-plus-square" style="color: #dd4b39;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="foundation-5.5.1.custom/js/vendor/jquery.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.js"></script>
+    <script src="js/angular-materialize.js"></script>
+    <script>
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+            $('ul.tabs').tabs();
+        });
+        angular.module("app", ['ngRoute','ui.materialize'])
+                .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
+                    $http.get('textbooks.json').success(function(data) {
+                        $scope.textbooks = data;
+                    });
+                }])
+                .controller('ShowTextbookCtrl', ['$scope','$http','$routeParams',function($scope, $http, $routeParams){
+
+                    $scope.textbook_id = $routeParams.id;
+                    console.log("URL ID is:" + $routeParams.id);
+                    $http.get('textbooks.json').success(function(data) {
+                        $scope.textbook = data.filter(function(entry){
+                            return entry.id == $scope.textbook_id;
+                        })[0];
+                    });
+                }])
+                .controller('ServiceCtrl',['$scope',function($scope){
+                    $scope.services = [
+                        {id:1,title:'need actor casting for elephant man',description:'Males or females need.',school:'City College of New York',place:'',category:'Baruch college',price:5, date:'2014-12-13'},
+                        {id:2,title:'Private Writing Tutoring!!!',description:'The semester has started which means writing numerous papers. I am a certified writing tutor and have worked as a writing tutor in the writing center. I offer help in editing/revising, making outlines for formal essays, help with lab reports and more. Get private and flexible writing tutoring when you need it on campus and online!! Reply for more details. (Negotiable pricing)',school:'City College of New York',place:'CCNY Campus',category:'',price:15,date:'2014-11-25'},
+                        {id:3,title:'Spanish Tutor',description:'',school:'City College of New York',place:'Corona',category:'Borough of Manhattan Community College',price:10, date:'2014-12-13'},
+                        {id:4,title:'Statistics Tutor',description:'I tutor Statistics in math, economics or psychology. I have an MBA in Finance and Bachelors Degrees in Math and Economics. I passed 3 actuarial exams and the CFA exam. I am a math professor at two CUNY schools and am on campus at Queens College on Mondays and Wednesdays in the afternoons - evenings for the Spring Semester. I have been tutoring Statistics for the past 5 years and am very patient.',school:'Queens College',place:'Queens College',category:'',price:50, date:'2014-12-13'}
+                    ];
+                }])
+                .controller('EventCtrl',['$scope',function($scope){
+                    $scope.events = [
+                        {id:1,title:'Hunter Symphony Concert', place:'Hunter College 68th Street and Lexington Avenue North Building, First Floor Assembly Hall', school:'Hunter College', category:'', price:0, date:'2015-03-25'},
+                        {id:2,title:'Stress and Time management for Pre-Health Students', place:'Hunter College 68th Street and Lexington Avenue West Building, 603', school:'Hunter College', category:'', price:0, date:'2015-03-20'},
+                        {id:3, title:"Ice cream party and Give away during free hour! free t shirts, Usb's, bagels and roundtrip metro car",place:"STUDENT UNION 320",description:"Ice cream party and Give away during free hour! free t shirts, Usb's, bagels and roundtrip metro card",club:"QC Appreciates Me Week #QCAMW",school:'Queens College',category:'',price:0,date:'2015-03-16'},
+                        {id:4,title:"Movies",club:"CAB",place:"1C 218", description:'February 23 – March 8 “The Hunger Games Mockingjay Part 1”, “Horrible Bosses 2”, and “Unbroken” March 9 – March 22 “Annabelle”, “Ouija” and “No Good Deed” March 23 – April 2 “ Into the Woods”, “Annie” and “The Hobbit: The Battle of the Five Armies” April 13 – April 26th “The Imitation Game”, “If I Stay” and “Divergent” April 27 – May 10 “Space Jam”, “The Breakfast Club” and “Jurassic Park” May 11 – May 24th “Fifty Shades of Grey”, “The Equalizer” and “The Wedding Ringer” 9am-9PM All week long',school:'College of Staten Island', price:0}
+                    ];
+                }])
+                .controller('MyCtrl', function($scope, $location) {
+                    console.log($location.path());
+                    $scope.isActive = function(route) {
+                        return route === $location.path();
+                    }
+                })
+                .config(function($routeProvider){
+                    $routeProvider
+                            .when('/',{
+                                templateUrl: 'views/home.html'
+                            })
+                            .when('/textbooks',{
+                                templateUrl: 'views/textbooks.html',
+                                controller: 'TextbookCtrl'
+                            })
+                            .when('/textbook/:id',{
+                                templateUrl: 'views/textbook.html',
+                                controller: 'ShowTextbookCtrl'
+                            })
+                            .when('/services',{
+                                templateUrl: 'views/services.html',
+                                controller: 'ServiceCtrl'
+                            })
+                            .when('/events',{
+                                templateUrl: 'views/events.html',
+                                controller: 'EventCtrl'
+                            })
+                            .when('/stuff',{
+                                templateUrl: 'views/stuff.html'
+                            })
+                            .when('/terms',{
+                                templateUrl: 'views/terms.html'
+                            });
+                });
+    </script>
+</body>
+</html>

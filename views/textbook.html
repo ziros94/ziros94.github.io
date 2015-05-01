@@ -1,0 +1,23 @@
+<table class="small-offset-3 small-6 columns textbook-table" style="margin-top: 30px;">
+    <tr ng-if="textbook.ISBN">
+        <th width="150">ISBN</th><td>{{textbook.ISBN}}</td>
+    </tr>
+    <tr ng-if="textbook.title">
+        <th width="200">Title</th><td>{{textbook.title}}</td>
+    </tr>
+    <tr ng-if="textbook.author">
+        <th width="150">Author</th><td>{{textbook.author}}</td>
+    </tr>
+    <tr ng-if="textbook.category">
+        <th width="150">Category</th><td>{{textbook.category}}</td>
+    </tr>
+    <tr ng-if="textbook.school">
+        <th width="150">School</th><td>{{textbook.school}}</td>
+    </tr>
+    <tr ng-if="textbook.price">
+        <th width="150">Price</th><td>{{textbook.price|currency}}</td>
+    </tr>
+    <tr ng-if="textbook.date">
+        <th width="150">Date</th><td>{{textbook.date|date:'MM-dd-yyyy'}}</td>
+    </tr>
+</table>
