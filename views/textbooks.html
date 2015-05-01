@@ -3,7 +3,8 @@
         <tr>
             <th width="200">Title</th>
             <th width="150">Author</th>
-            <th width="150">School</th>
+            <th>School</th>
+            <th width="150">ISBN</th>
             <th width="150">Price</th>
         </tr>
     </thead>
@@ -11,7 +12,8 @@
         <tr ng-repeat="textbook in textbooks">
             <td width="200"><a href="#/textbook/{{textbook.id}}">{{textbook.title}}</a></td>
             <td width="150">{{textbook.author}}</td>
-            <td width="150">{{textbook.school}}</td>
+            <td>{{textbook.school}}</td>
+            <td width="150">{{textbook.ISBN}}</td>
             <td width="150">{{textbook.price|currency}}</td>
         </tr>
     </tbody>

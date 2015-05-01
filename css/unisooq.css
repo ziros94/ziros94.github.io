@@ -49,3 +49,19 @@ html, body {
 .textbook-table>tbody>tr>th{
     text-align: center;
 }
+.modal-trigger{
+    cursor:pointer;
+}
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}

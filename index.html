@@ -36,64 +36,69 @@
 <body >
     <!-- Modal Structure -->
     <div id="login-modal" class="modal" style="max-height: none;">
-    <div class="modal-content">
-        <h4>Log In</h4>
-        <div class="row">
-            <div class="input-field col offset-s3 s6">
-                <i class="mdi-action-account-box prefix"></i>
-                <input id="username" type="text" class="validate">
-                <label for="username">Username</label>
+        <a class="simplemodal-close btn-flat white" aria-hidden="true" style="float: right;">&times;</a>
+        <div class="modal-content">
+            <h4>Log In</h4>
+            <div class="row">
+                <div class="input-field col offset-s3 s6">
+                    <i class="mdi-action-account-box prefix"></i>
+                    <input id="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col offset-s3 s6">
+                    <i class="mdi-action-account-box prefix"></i>
+                    <input id="password" type="text" class="validate">
+                    <label for="password">Password</label>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col offset-s3 s6">
-                <i class="mdi-action-account-box prefix"></i>
-                <input id="password" type="text" class="validate">
-                <label for="password">Password</label>
-            </div>
+        <div class="modal-footer">
+            <!--<div class="row">-->
+                <a href="#" class="modal-action simplemodal-close btn-flat">Login</a>
+            <!--</div>-->
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close btn-flat" style="float: none !important;">Login</a>
-    </div>
-</div>
 
     <div id="register-modal" class="modal" style="max-height: none;">
-    <div class="modal-content">
-        <h4>Sign Up</h4>
-        <div class="row">
-            <div class="input-field col offset-s2 s4">
-                <input id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
+        <a class="simplemodal-close btn-flat white" aria-hidden="true" style="float: right;">&times;</a>
+        <div class="modal-content">
+            <h4>Sign Up</h4>
+            <div class="row">
+                <div class="input-field col offset-s2 s4">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
             </div>
-            <div class="input-field col s4">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
+            <div class="row">
+                <div class="input-field col offset-s4 s4">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col offset-s4 s4">
+                    <input id="pw_signup" type="password" class="validate">
+                    <label for="pw_signup">Create Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col offset-s4 s4">
+                    <input id="pw_confirm" type="password" class="validate">
+                    <label for="pw_confirm">Confirm Password</label>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col offset-s4 s4">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col offset-s4 s4">
-                <input id="pw_signup" type="password" class="validate">
-                <label for="pw_signup">Create Password</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col offset-s4 s4">
-                <input id="pw_confirm" type="password" class="validate">
-                <label for="pw_confirm">Confirm Password</label>
-            </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action simplemodal-close btn-flat">Agree</a>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close btn-flat" style="float: none !important;">Agree</a>
-    </div>
-</div>
+
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content adjusted">
         <li><a href="#">Brooklyn College</a></li>
@@ -123,16 +128,16 @@
                     <div class="container">
                         <a href="#" class="brand-logo left" style="position: static !important;">Unisooq</a>
                         <ul class="left hide-on-med-and-down" style="margin-left: 8%">
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Brooklyn</a></li>
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Bronx</a></li>
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Manhattan</a></li>
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown4">Queens</a></li>
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown5">Staten Island</a></li>
+                            <li><a class="dropdown-button" href="#" data-activates="dropdown1">Brooklyn</a></li>
+                            <li><a class="dropdown-button" href="#" data-activates="dropdown2">Bronx</a></li>
+                            <li><a class="dropdown-button" href="#" data-activates="dropdown3">Manhattan</a></li>
+                            <li><a class="dropdown-button" href="#" data-activates="dropdown4">Queens</a></li>
+                            <li><a class="dropdown-button" href="#" data-activates="dropdown5">Staten Island</a></li>
 
                         </ul>
                         <ul class="right">
-                            <li><a class="modal-trigger" href="#login-modal">Login</a></li>
-                            <li><a class="modal-trigger" href="#register-modal">Register</a></li>
+                            <li><a class="modal-trigger" id="login-modal-trigger">Login</a></li>
+                            <li><a class="modal-trigger" id="register-modal-trigger">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -142,7 +147,7 @@
         <div class="body">
             <div class="row">
                 <div class="col s12">
-                    <ul class="tabs" tabs>
+                    <ul class="tabs">
                         <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}" ><a href="#/textbooks">Textbooks</a></li>
                         <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/services">Services</a></li>
                         <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/events">Events</a></li>
@@ -163,7 +168,6 @@
                     <div class="col s10">
                         <p class="slogan">The Student Marketplace</p>
                         <ul class="links">
-                            <li><a class="white-text" href="#" data-reveal-id="myModal">Register/Sign In</a>
                             <li><a class="white-text" href="#">About Us</a>
                             <li><a class="white-text" href="#">F.A.Q.</a>
                             <li><a class="white-text" href="#">Contact</a>
@@ -183,13 +187,23 @@
     <script type="text/javascript" src="foundation-5.5.1.custom/js/vendor/jquery.js"></script>
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
-    <script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.js"></script>
+    <!--<script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.js"></script>-->
     <script src="js/angular-materialize.js"></script>
+    <script src="js/jquery.simplemodal.1.4.4.min.js"></script>
     <script>
         $(document).ready(function(){
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal-trigger').leanModal();
-            $('ul.tabs').tabs();
+            $('#login-modal-trigger').on('click', function(){
+                $('#login-modal').modal();
+                $('body').append("<div class='vignette'></div>");
+            });
+            $('#register-modal-trigger').on('click', function(){
+                $('#register-modal').modal();
+                $('body').append("<div class='vignette'></div>");
+            });
+            $('.simplemodal-close').on('click', function(){
+                $('.vignette').remove();
+            });
         });
         angular.module("app", ['ngRoute','ui.materialize'])
                 .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
