@@ -6,38 +6,12 @@
     <link rel="stylesheet" href="materialize-v0.96.1/materialize/css/materialize.css">
     <link rel="stylesheet" href="css/unisooq.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0; padding: 0;  /* to avoid scrollbars */
-        }
-        .adjusted{
-            width: auto !important;
-            top:auto !important;
-        }
-        .body{
-            display: inline-block;text-align: center;margin-top: 10px;
-            /*height: 80.3%;*/
-            flex:1;
-            /*text-align: center;*/
-        }
-        #wrapper {
-            display: flex;  /* use the flex model */
-            min-height: 100%;
-            flex-direction: column;  /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
-        }
-        .slogan{
-            color: black;
-            font-size: 1.8rem;
-            margin: 0 0 1rem;
-        }
-    </style>
 </head>
-<body >
+<body>
     <!-- Modal Structure -->
     <div id="login-modal" class="modal" style="max-height: none;">
-        <a class="simplemodal-close btn-flat white" aria-hidden="true" style="float: right;">&times;</a>
-        <div class="modal-content">
+        <a class="modal-close btn-flat grey lighten-5" aria-hidden="true" style="float: right;">&times;</a>
+        <div class="modal-content text-center">
             <h4>Log In</h4>
             <div class="row">
                 <div class="input-field col offset-s3 s6">
@@ -56,14 +30,14 @@
         </div>
         <div class="modal-footer">
             <!--<div class="row">-->
-                <a href="#" class="modal-action simplemodal-close btn-flat">Login</a>
+                <a href="#" class="modal-action modal-close btn-flat">Login</a>
             <!--</div>-->
         </div>
     </div>
 
     <div id="register-modal" class="modal" style="max-height: none;">
-        <a class="simplemodal-close btn-flat white" aria-hidden="true" style="float: right;">&times;</a>
-        <div class="modal-content">
+        <a class="modal-close btn-flat grey lighten-5" aria-hidden="true" style="float: right;">&times;</a>
+        <div class="modal-content text center">
             <h4>Sign Up</h4>
             <div class="row">
                 <div class="input-field col offset-s2 s4">
@@ -95,7 +69,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action simplemodal-close btn-flat">Agree</a>
+            <a href="#" class="modal-action modal-close btn-flat">Register</a>
         </div>
     </div>
 
@@ -124,7 +98,7 @@
     <div id="wrapper">
         <div class="navbar-fixed">
             <nav>
-                <div class="nav-wrapper indigo">
+                <div class="nav-wrapper yellow darken-3">
                     <div class="container">
                         <a href="#" class="brand-logo left" style="position: static !important;">Unisooq</a>
                         <ul class="left hide-on-med-and-down" style="margin-left: 8%">
@@ -136,8 +110,8 @@
 
                         </ul>
                         <ul class="right">
-                            <li><a class="modal-trigger" id="login-modal-trigger">Login</a></li>
-                            <li><a class="modal-trigger" id="register-modal-trigger">Register</a></li>
+                            <li><a href="#login-modal" class="modal-trigger" id="login-modal-trigger">Login</a></li>
+                            <li><a href="#register-modal" class="modal-trigger" id="register-modal-trigger">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -148,25 +122,24 @@
             <div class="row">
                 <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}" ><a href="#/textbooks">Textbooks</a></li>
-                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/services">Services</a></li>
-                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/events">Events</a></li>
-                        <li class="tab col s3" ng-class="{'active':isActive('/textbooks')}"><a href="#/stuff">Stuff</a></li>
+                        <li class="tab col s3"><a onclick="window.location ='#/textbooks';">Textbooks</a></li>
+                        <li class="tab col s3"><a onclick="window.location = '#/services';">Services</a></li>
+                        <li class="tab col s3"><a onclick="window.location = '#/events';">Events</a></li>
+                        <li class="tab col s3"><a onclick="window.location = '#/stuff';">Stuff</a></li>
                     </ul>
                 </div>
-                <div id="view" class="col s12">
+                <div id="test1" class="col s12">
                     <div class="container">
                         <div ng-view></div>
                     </div>
-
                 </div>
             </div>
         </div>
-        <footer class="page-footer indigo">
+        <footer class="page-footer indigo darken-3">
             <div class="container">
-                <div class="row" style="text-align: center">
+                <div class="row text-center">
                     <div class="col s10">
-                        <p class="slogan">The Student Marketplace</p>
+                        <p class="slogan lime-text text-darken-3">Students Helping Students</p>
                         <ul class="links">
                             <li><a class="white-text" href="#">About Us</a>
                             <li><a class="white-text" href="#">F.A.Q.</a>
@@ -184,28 +157,19 @@
         </footer>
     </div>
 
-    <script type="text/javascript" src="foundation-5.5.1.custom/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        var jq = jQuery.noConflict();
+    </script>
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
-    <!--<script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.js"></script>-->
-    <script src="js/angular-materialize.js"></script>
-    <script src="js/jquery.simplemodal.1.4.4.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('#login-modal-trigger').on('click', function(){
-                $('#login-modal').modal();
-                $('body').append("<div class='vignette'></div>");
-            });
-            $('#register-modal-trigger').on('click', function(){
-                $('#register-modal').modal();
-                $('body').append("<div class='vignette'></div>");
-            });
-            $('.simplemodal-close').on('click', function(){
-                $('.vignette').remove();
-            });
+    <script type="text/javascript">
+        jQuery( document ).ready(function() {
+            jQuery('ul.tabs').tabs();
+            jQuery('.modal-trigger').leanModal();
         });
-        angular.module("app", ['ngRoute','ui.materialize'])
+        angular.module("app", ['ngRoute'])
                 .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
                     $http.get('textbooks.json').success(function(data) {
                         $scope.textbooks = data;
@@ -237,17 +201,9 @@
                         {id:4,title:"Movies",club:"CAB",place:"1C 218", description:'February 23 – March 8 “The Hunger Games Mockingjay Part 1”, “Horrible Bosses 2”, and “Unbroken” March 9 – March 22 “Annabelle”, “Ouija” and “No Good Deed” March 23 – April 2 “ Into the Woods”, “Annie” and “The Hobbit: The Battle of the Five Armies” April 13 – April 26th “The Imitation Game”, “If I Stay” and “Divergent” April 27 – May 10 “Space Jam”, “The Breakfast Club” and “Jurassic Park” May 11 – May 24th “Fifty Shades of Grey”, “The Equalizer” and “The Wedding Ringer” 9am-9PM All week long',school:'College of Staten Island', price:0}
                     ];
                 }])
-                .controller('MyCtrl', function($scope, $location) {
-                    console.log($location.path());
-                    $scope.isActive = function(route) {
-                        return route === $location.path();
-                    }
-                })
                 .config(function($routeProvider){
                     $routeProvider
-                            .when('/',{
-                                templateUrl: 'views/home.html'
-                            })
+
                             .when('/textbooks',{
                                 templateUrl: 'views/textbooks.html',
                                 controller: 'TextbookCtrl'
