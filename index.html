@@ -100,7 +100,7 @@
             <nav>
                 <div class="nav-wrapper yellow darken-3">
                     <div class="container">
-                        <a href="#" class="brand-logo left" style="position: static !important;">Unisooq</a>
+                        <a href="#/" class="brand-logo left" style="position: static !important;">Unisooq</a>
                         <ul class="left hide-on-med-and-down" style="margin-left: 8%">
                             <li><a class="dropdown-button" href="#" data-activates="dropdown1">Brooklyn</a></li>
                             <li><a class="dropdown-button" href="#" data-activates="dropdown2">Bronx</a></li>
@@ -131,6 +131,7 @@
                 <div id="test1" class="col s12">
                     <div class="container">
                         <div ng-view></div>
+
                     </div>
                 </div>
             </div>
@@ -168,6 +169,8 @@
         jQuery( document ).ready(function() {
             jQuery('ul.tabs').tabs();
             jQuery('.modal-trigger').leanModal();
+            jQuery('.slider').slider();
+            console.log('hi');
         });
         angular.module("app", ['ngRoute'])
                 .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
@@ -201,9 +204,18 @@
                         {id:4,title:"Movies",club:"CAB",place:"1C 218", description:'February 23 – March 8 “The Hunger Games Mockingjay Part 1”, “Horrible Bosses 2”, and “Unbroken” March 9 – March 22 “Annabelle”, “Ouija” and “No Good Deed” March 23 – April 2 “ Into the Woods”, “Annie” and “The Hobbit: The Battle of the Five Armies” April 13 – April 26th “The Imitation Game”, “If I Stay” and “Divergent” April 27 – May 10 “Space Jam”, “The Breakfast Club” and “Jurassic Park” May 11 – May 24th “Fifty Shades of Grey”, “The Equalizer” and “The Wedding Ringer” 9am-9PM All week long',school:'College of Staten Island', price:0}
                     ];
                 }])
+                .directive('slider', function(){
+                    return {
+                        link: function(scope,element,attrs){
+                            element.slider();
+                        }
+                    }
+                })
                 .config(function($routeProvider){
                     $routeProvider
-
+                            .when('/',{
+                                templateUrl: 'views/home.html'
+                            })
                             .when('/textbooks',{
                                 templateUrl: 'views/textbooks.html',
                                 controller: 'TextbookCtrl'
@@ -225,6 +237,9 @@
                             })
                             .when('/terms',{
                                 templateUrl: 'views/terms.html'
+                            })
+                            .otherwise({
+                                redirectTo: '/'
                             });
                 });
     </script>
