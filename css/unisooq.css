@@ -1,19 +1,16 @@
-html, body {
-    height: 100%;
-    margin: 0; padding: 0;  /* to avoid scrollbars */
-}
-#wrapper {
-    display: flex;  /* use the flex model */
-    min-height: 100%;
-    flex-direction: column;  /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 .links>li{
     display: inline;
     padding: 0 5px;
 }
 .body{
-    display: inline-block;text-align: center;margin-top: 10px;
-    flex:1;
+    text-align: center;
+    margin-top: 10px;
+    flex: 1 0 auto;
 }
 .tabs{
     display: inline-block;
@@ -31,11 +28,6 @@ a{
 .slogan{
     font-size: 1.8rem;
     margin: 0 0 1rem;
-}
-#wrapper {
-    display: flex;  /* use the flex model */
-    min-height: 100%;
-    flex-direction: column;  /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
 }
 .adjusted{
     width: auto !important;

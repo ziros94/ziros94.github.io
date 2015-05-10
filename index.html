@@ -94,70 +94,65 @@
     <ul id="dropdown5" class="dropdown-content adjusted">
         <li><a href="#">Lehman College</a></li>
     </ul>
-
-    <div id="wrapper">
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper yellow darken-3">
-                    <div class="container">
-                        <a href="#/" class="brand-logo left" style="position: static !important;">Unisooq</a>
-                        <ul class="left hide-on-med-and-down" style="margin-left: 8%">
-                            <li><a class="dropdown-button" href="#" data-activates="dropdown1">Brooklyn</a></li>
-                            <li><a class="dropdown-button" href="#" data-activates="dropdown2">Bronx</a></li>
-                            <li><a class="dropdown-button" href="#" data-activates="dropdown3">Manhattan</a></li>
-                            <li><a class="dropdown-button" href="#" data-activates="dropdown4">Queens</a></li>
-                            <li><a class="dropdown-button" href="#" data-activates="dropdown5">Staten Island</a></li>
-
-                        </ul>
-                        <ul class="right">
-                            <li><a href="#login-modal" class="modal-trigger" id="login-modal-trigger">Login</a></li>
-                            <li><a href="#register-modal" class="modal-trigger" id="register-modal-trigger">Register</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- BODY -->
-        <div class="body">
-            <div class="row">
-                <div class="col s12">
-                    <ul class="tabs">
-                        <li class="tab col s3"><a onclick="window.location ='#/textbooks';">Textbooks</a></li>
-                        <li class="tab col s3"><a onclick="window.location = '#/services';">Services</a></li>
-                        <li class="tab col s3"><a onclick="window.location = '#/events';">Events</a></li>
-                        <li class="tab col s3"><a onclick="window.location = '#/stuff';">Stuff</a></li>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper yellow darken-3">
+                <div class="container">
+                    <a href="#/" class="brand-logo left" style="position: static !important;">Unisooq</a>
+                    <ul class="left hide-on-med-and-down" style="margin-left: 8%">
+                        <li><a class="dropdown-button" href="#" data-activates="dropdown1">Brooklyn</a></li>
+                        <li><a class="dropdown-button" href="#" data-activates="dropdown2">Bronx</a></li>
+                        <li><a class="dropdown-button" href="#" data-activates="dropdown3">Manhattan</a></li>
+                        <li><a class="dropdown-button" href="#" data-activates="dropdown4">Queens</a></li>
+                        <li><a class="dropdown-button" href="#" data-activates="dropdown5">Staten Island</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li><a href="#login-modal" class="modal-trigger" id="login-modal-trigger">Login</a></li>
+                        <li><a href="#register-modal" class="modal-trigger" id="register-modal-trigger">Register</a></li>
                     </ul>
                 </div>
-                <div id="test1" class="col s12">
-                    <div class="container">
-                        <div ng-view></div>
+            </div>
+        </nav>
+    </div>
+    <!-- BODY -->
+    <div class="body">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a onclick="window.location ='#/textbooks';">Textbooks</a></li>
+                    <li class="tab col s3"><a onclick="window.location = '#/services';">Services</a></li>
+                    <li class="tab col s3"><a onclick="window.location = '#/events';">Events</a></li>
+                    <li class="tab col s3"><a onclick="window.location = '#/stuff';">Stuff</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">
+                <div class="container">
+                    <div ng-view></div>
 
-                    </div>
                 </div>
             </div>
         </div>
-        <footer class="page-footer indigo darken-3">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col s10">
-                        <p class="slogan lime-text text-darken-3">Students Helping Students</p>
-                        <ul class="links">
-                            <li><a class="white-text" href="#">About Us</a>
-                            <li><a class="white-text" href="#">F.A.Q.</a>
-                            <li><a class="white-text" href="#">Contact</a>
-                            <li><a class="white-text" href="#/terms">Terms and Conditions</a>
-                        </ul>
-                    </div>
-                    <div class="col s2 valign-wrapper">
-                        <a class="valign" href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-twitter-square"></i></a>
-                        <a class="valign" href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-facebook-square"></i></a>
-                        <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><i class="fa fa-3x fa-google-plus-square" style="color: #dd4b39;"></i></a>
-                    </div>
+    </div>
+    <footer class="page-footer indigo darken-3">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col s10">
+                    <p class="slogan lime-text text-darken-3">Students Helping Students</p>
+                    <ul class="links">
+                        <li><a class="white-text" href="#">About Us</a>
+                        <li><a class="white-text" href="#">F.A.Q.</a>
+                        <li><a class="white-text" href="#">Contact</a>
+                        <li><a class="white-text" href="#/terms">Terms and Conditions</a>
+                    </ul>
+                </div>
+                <div class="col s2 valign-wrapper">
+                    <a class="valign" href="http://twitter.com/share?url=http://www.simplesharebuttons.com&text=Simple Share Buttons&hashtags=simplesharebuttons" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-twitter-square"></i></a>
+                    <a class="valign" href="http://www.facebook.com/sharer.php?u=http://www.simplesharebuttons.com" target="_blank" style="margin-right: 5px;"><i class="fa fa-3x fa-facebook-square"></i></a>
+                    <a href="https://plus.google.com/share?url=http://www.simplesharebuttons.com" target="_blank"><i class="fa fa-3x fa-google-plus-square" style="color: #dd4b39;"></i></a>
                 </div>
             </div>
-        </footer>
-    </div>
-
+        </div>
+    </footer>
     <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="materialize-v0.96.1/materialize/js/materialize.min.js"></script>
     <script type="text/javascript">
