@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Unisooq</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="materialize-v0.96.1/materialize/css/materialize.css">
     <link rel="stylesheet" href="css/unisooq.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -128,7 +129,6 @@
             <div id="test1" class="col s12">
                 <div class="container">
                     <div ng-view></div>
-
                 </div>
             </div>
         </div>
@@ -161,11 +161,25 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-route.js"></script>
     <script type="text/javascript">
-        jQuery( document ).ready(function() {
-            jQuery('ul.tabs').tabs();
-            jQuery('.modal-trigger').leanModal();
-            jQuery('.slider').slider();
-            console.log('hi');
+        jQuery.fn.visible = function() {
+            return this.css('visibility', 'visible');
+        };
+        jQuery.fn.invisible = function() {
+            return this.css('visibility', 'hidden');
+        };
+        jq(document).ready(function() {
+            jq('ul.tabs').tabs();
+            jq('.indicator').invisible();
+            jq('ul.tabs').on('click',function(){
+                if (jq('.indicator').css("visibility")==="hidden"){
+                    jq('.indicator').visible();
+                }
+            });
+            jq('.brand-logo').on('click', function(){
+                jq('.indicator').invisible();
+            });
+            jq('.modal-trigger').leanModal();
+            jq('.slider').slider();
         });
         angular.module("app", ['ngRoute'])
                 .controller('TextbookCtrl',['$scope','$http',function($scope,$http){
