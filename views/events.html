@@ -23,6 +23,26 @@
         </li>
     </ul>
 </div>
+
+<div class="card" ng-repeat="event in events">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="../img/soccer.png">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{event.title|limitTo:15}}{{event.title.length > 15 ? '&hellip;':''}} <i class="mdi-navigation-more-vert right"></i></span>
+        <!--<p><a href="#">This is a link</a></p> Could be needed in the future for ohter stuff-->
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{event.title}} <i class="mdi-navigation-close right"></i></span>
+        <p>Title: {{event.title}}</p>
+        <p ng-if="event.place">Author: {{event.place}}</p>
+        <p ng-if="event.school">School: {{event.school}}</p>
+        <p ng-if="textbook.price">Price: {{textbook.price}}</p>
+        <p ng-if="textbook.date">Date: {{textbook.date|date:'MM-dd-yyyy'}}</p>
+
+    </div>
+</div>
+
 <table class="s12 col table" style="margin-top: 20px;">
     <thead>
     <tr>

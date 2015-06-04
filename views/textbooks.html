@@ -1,3 +1,25 @@
+<div class="card" ng-repeat="textbook in textbooks|limitTo:9">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="../img/battlefield.png">
+    </div>
+    <div class="card-content">
+        <!--<span class="card-title activator grey-text text-darken-4">{{textbook.title}} <i class="mdi-navigation-more-vert right"></i></span>-->
+        <span class="card-title activator grey-text text-darken-4">{{textbook.title|limitTo:15}}{{textbook.title.length > 15 ? '&hellip;': ''}} <i class="mdi-navigation-more-vert right"></i></span>
+        <!--<p><a href="#">This is a link</a></p> Could be needed in the future for other stuff-->
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{textbook.title}} <i class="mdi-navigation-close right"></i></span>
+        <p>Title: {{textbook.title}}</p>
+        <p ng-if="textbook.ISBN">ISBN: {{textbook.ISBN}}</p>
+        <p ng-if="textbook.author">Author: {{textbook.author}}</p>
+        <p ng-if="textbook.category">Category: {{textbook.category}}</p>
+        <p ng-if="textbook.school">School: {{textbook.school}}</p>
+        <p ng-if="textbook.price">Price: {{textbook.price}}</p>
+        <p ng-if="textbook.date">Date: {{textbook.date|date:'MM-dd-yyyy'}}</p>
+    </div>
+</div>
+
+
 <table class="col s12 table">
     <thead>
         <tr>
