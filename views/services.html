@@ -23,9 +23,13 @@
         </li>
     </ul>
 </div>
-
-
-<div class="card" ng-repeat="service in services|limitTo:9">
+<div class="row">
+    <div class="input-field col offset-s4 s4 offset-s4" >
+        <input id="text_search" type="text" class="validate" ng-model="search.title">
+        <label for="text_search"><i class="mdi-hardware-keyboard-alt"></i><span style="margin-left: 5px;">Search Services</span></label>
+    </div>
+</div>
+<div class="card" ng-repeat="service in services|filter:search">
     <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="../img/battlefield.png">
     </div>
@@ -56,23 +60,23 @@
     <!--</div>-->
 <!--</div>-->
 
-<table class="s12 col table" style="margin-top: 30px;">
-    <thead>
-    <tr>
-        <th width="200">Title</th>
-        <th width="150">Place</th>
-        <th>Description</th>
-        <th width="150">Price</th>
-        <th width="150">Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="service in services">
-        <td width="200">{{service.title}}</td>
-        <td width="150">{{service.place}}</td>
-        <td>{{service.description}}</td>
-        <td width="150">{{service.price|currency}}</td>
-        <td width="150">{{service.date|date:'MM-dd-yyyy'}}</td>
-    </tr>
-    </tbody>
-</table>
+<!--<table class="s12 col table" style="margin-top: 30px;">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th width="200">Title</th>-->
+        <!--<th width="150">Place</th>-->
+        <!--<th>Description</th>-->
+        <!--<th width="150">Price</th>-->
+        <!--<th width="150">Date</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr ng-repeat="service in services">-->
+        <!--<td width="200">{{service.title}}</td>-->
+        <!--<td width="150">{{service.place}}</td>-->
+        <!--<td>{{service.description}}</td>-->
+        <!--<td width="150">{{service.price|currency}}</td>-->
+        <!--<td width="150">{{service.date|date:'MM-dd-yyyy'}}</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->

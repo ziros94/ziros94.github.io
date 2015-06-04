@@ -23,8 +23,13 @@
         </li>
     </ul>
 </div>
-
-<div class="card" ng-repeat="event in events">
+<div class="row">
+    <div class="input-field col offset-s4 s4 offset-s4" >
+        <input id="text_search" type="text" class="validate" ng-model="search.title">
+        <label for="text_search"><i class="mdi-action-event"></i><span style="margin-left: 5px;">Search Events</span></label>
+    </div>
+</div>
+<div class="card" ng-repeat="event in events|filter:search">
     <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="../img/soccer.png">
     </div>
@@ -43,23 +48,23 @@
     </div>
 </div>
 
-<table class="s12 col table" style="margin-top: 20px;">
-    <thead>
-    <tr>
-        <th width="200">Title</th>
-        <th width="150">Place</th>
-        <th width="150">School</th>
-        <th width="150">Price</th>
-        <th width="150">Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="event in events">
-        <td width="200">{{event.title}}</td>
-        <td width="150">{{event.place}}</td>
-        <td width="150">{{event.school}}</td>
-        <td width="150">{{event.price|currency}}</td>
-        <td width="150">{{event.date|date:'MM-dd-yyyy'}}</td>
-    </tr>
-    </tbody>
-</table>
+<!--<table class="s12 col table" style="margin-top: 20px;">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th width="200">Title</th>-->
+        <!--<th width="150">Place</th>-->
+        <!--<th width="150">School</th>-->
+        <!--<th width="150">Price</th>-->
+        <!--<th width="150">Date</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr ng-repeat="event in events">-->
+        <!--<td width="200">{{event.title}}</td>-->
+        <!--<td width="150">{{event.place}}</td>-->
+        <!--<td width="150">{{event.school}}</td>-->
+        <!--<td width="150">{{event.price|currency}}</td>-->
+        <!--<td width="150">{{event.date|date:'MM-dd-yyyy'}}</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
