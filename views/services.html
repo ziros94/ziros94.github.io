@@ -35,10 +35,10 @@
     </div>
     <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{service.title}} <i class="mdi-navigation-close right"></i></span>
-        <p>Place: {{service.place}}</p>
-        <p>Price: {{service.price|currency}}</p>
-        <p>Date: {{service.date|date: 'MM-dd-yyyy'}}</p>
-        <p>Description: {{service.description}}</p>
+        <p ng-if="service.place">Place: {{service.place}}</p>
+        <p ng-if="service.price">Price: {{service.price|currency}}</p>
+        <p ng-if="service.date">Date: {{service.date|date: 'MM-dd-yyyy'}}</p>
+        <p ng-if="service.description">Description: {{service.description}}</p>
     </div>
 </div>
 

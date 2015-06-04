@@ -14,7 +14,7 @@
         <p ng-if="textbook.author">Author: {{textbook.author}}</p>
         <p ng-if="textbook.category">Category: {{textbook.category}}</p>
         <p ng-if="textbook.school">School: {{textbook.school}}</p>
-        <p ng-if="textbook.price">Price: {{textbook.price}}</p>
+        <p ng-if="textbook.price">Price: {{textbook.price | currency}}</p>
         <p ng-if="textbook.date">Date: {{textbook.date|date:'MM-dd-yyyy'}}</p>
     </div>
 </div>
